@@ -1,9 +1,20 @@
-import React from 'react'
+import { auth } from "@/auth";
+import LogoutButton from "@/components/ui/logout-button";
 
-const AdminPage = () => {
+const AdminPage = async () => {
+  const session = await auth();
+
+  console.log(session);
+
+  if (session?.user?.role !== "admin") {
+    return <div>You are not admin</div>;
+  }
+
   return (
-    <div>AdminPage</div>
-  )
-}
-
-export default AdminPage
+    <div className="container">
+      <pre>{JSON.stringify(session, null, 2)}</pre>
+      <LogoutButton />
+    </div>
+  );
+};
+export default AdminPage;

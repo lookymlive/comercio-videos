@@ -1,11 +1,6 @@
-import React from 'react'
+import FormRegister from "@/components/ui/form-register";
 
 const RegisterPage = () => {
-  return (
-    <div>RegisterPage
-      
-    </div>
-  )
-}
-
-export default RegisterPage
+  return <FormRegister />;
+};
+export default RegisterPage;
