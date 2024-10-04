@@ -4,10 +4,11 @@ import bcrypt from "bcryptjs";
 import { nanoid } from "nanoid";
 import type { NextAuthConfig } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
-import { sendEmailVerification } from 
+import { sendEmailVerification } from  "./lib/mail";
 
-import GitHub from "next-auth/providers/github";
 import Google from "next-auth/providers/google";
+import GitHub from "next-auth/providers/github";
+
 
 // Notice this is only an object, not a full Auth.js instance
 export default {
